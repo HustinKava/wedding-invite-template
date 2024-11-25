@@ -1,0 +1,69 @@
+/*
+  Convert a given absolute size to rem based on the defined base font size
+*/
+@function getSize($relativeUnits) {
+  @return calc(#{$relativeUnits} * 1rem / var(--ngx-ac-base-font-size, 16));
+}
+
+@mixin customPlaceholder() {
+  ::-moz-placeholder {
+    @content;
+  }
+
+  :-ms-input-placeholder {
+    @content;
+  }
+
+  ::-ms-input-placeholder {
+    @content;
+  }
+
+  ::-webkit-input-placeholder {
+    @content;
+  }
+
+  ::placeholder {
+    @content;
+  }
+}
+
+@mixin set-screen-width() {
+  max-width: getSize(var(--ac-page-container-max-width));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin ac-visually-hidden() {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@mixin ac-image($width, $height) {
+  width: getSize($width);
+  height: getSize($height);
+}
+
+/*
+    * Create a set of color classes based on a given color name and its value.
+    */
+@mixin generate-color-classes($colorClassName, $color) {
+  .#{$colorClassName} {
+    color: $color;
+  }
+  .background-#{$colorClassName} {
+    background-color: $color;
+  }
+}
+
+@mixin page-max-width-margin-auto() {
+  max-width: getSize(var(--ac-page-container-max-width));
+  margin-right: auto;
+  margin-left: auto;
+}

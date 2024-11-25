@@ -1,0 +1,27 @@
+@use 'colors' as *;
+@use 'break-points' as *;
+@use 'mixins' as *;
+
+.calendar-wrapper {
+  .calendar-text {
+    text-align: center;
+    margin: getSize(5);
+  }
+
+  .calendar-content {
+    display: flex;
+    justify-content: center;
+    padding-bottom: getSize(10);
+    gap: getSize(10);
+
+    @media (max-width: $max-mobile) {
+      gap: 0;
+    }
+
+    &-btn {
+      display: flex;
+      justify-content: center;
+      width: getSize(120);
+    }
+  }
+}

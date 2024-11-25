@@ -1,0 +1,39 @@
+// Global styles
+@import './styles/break-points';
+@import './styles/colors';
+@import './styles/icons';
+@import './styles/mixins';
+@import './styles/icons.scss';
+@import './styles/fonts';
+@import './styles/font-weights';
+
+h1,
+h2,
+h3 {
+  font-family: $malibu;
+  color: $steel-blue;
+  font-weight: $semi-bold;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  color: $steel-blue;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}

@@ -1,0 +1,8 @@
+@use 'font-weights' as *;
+@use 'mixins' as *;
+
+.header {
+  text-align: center;
+  padding-bottom: getSize(50);
+  font-weight: $semi-bold;
+}

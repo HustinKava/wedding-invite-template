@@ -1,0 +1,104 @@
+@use 'fonts' as *;
+@use 'font-weights' as *;
+@use 'colors' as *;
+@use 'break-points' as *;
+@use 'mixins' as *;
+
+.nav-wrapper {
+  position: relative;
+  z-index: 5555;
+
+  .nav {
+    display: flex;
+    position: fixed;
+    z-index: 555;
+    top: 0;
+    opacity: 1;
+    left: 0;
+    width: 100%;
+    background: $pale-cyan;
+    border: none;
+    box-shadow: 0 getSize(1) getSize(5) $flight-box-shadow;
+    -moz-box-shadow: 0 getSize(1) getSize(5) $flight-box-shadow;
+    -webkit-box-shadow: 0 getSize(1) getSize(5) $flight-box-shadow;
+
+    .container {
+      max-width: 100%;
+      padding: 0 getSize(20);
+    }
+
+    &-links {
+      align-self: center;
+    }
+
+    &-logo {
+      margin: getSize(15) 0;
+      text-align: center;
+      align-self: center;
+
+      @include screen-is-not(desktop) {
+        text-align: left;
+      }
+
+      & h2 {
+        margin: 0;
+        padding: getSize(3) 0 0 0;
+
+        a {
+          font-size: getSize(36);
+          font-family: $malibu;
+          color: $steel-blue;
+
+          @include screen-is(small-desktop) {
+            font-size: getSize(32);
+          }
+
+          @include screen-is(tablet) {
+            font-size: getSize(28);
+          }
+
+          @include screen-is(mobile) {
+            font-size: getSize(24);
+          }
+        }
+      }
+    }
+
+    &-desktop-left {
+      justify-content: flex-start;
+    }
+
+    &-desktop-right {
+      justify-content: flex-end;
+
+      & a {
+        border: getSize(2) solid $baby-blue;
+        padding: getSize(5) getSize(15);
+      }
+    }
+
+    &-desktop {
+      list-style: none;
+      display: flex;
+      margin-bottom: 0;
+      padding: 0;
+
+      & li {
+        padding: getSize(25) getSize(5);
+        position: relative;
+
+        & a {
+          color: $steel-blue;
+          text-decoration: none;
+          font-family: 'Times New Roman', Times, serif;
+          text-transform: uppercase;
+          font-weight: $semi-bold;
+
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

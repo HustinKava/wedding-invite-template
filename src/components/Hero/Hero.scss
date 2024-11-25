@@ -1,0 +1,23 @@
+@use 'fonts' as *;
+@use 'colors' as *;
+@use 'break-points' as *;
+@use 'mixins' as *;
+
+.hero-wrapper {
+  background: $papaya-whip;
+  padding-top: getSize(20);
+
+  @media (max-width: $max-mobile) {
+    padding-top: getSize(35);
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-pagination-bullets {
+    display: none;
+  }
+}

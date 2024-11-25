@@ -1,0 +1,193 @@
+@use 'fonts' as *;
+@use 'colors' as *;
+@use 'break-points' as *;
+@use 'mixins' as *;
+
+.rsvp-wrapper {
+  padding: getSize(50);
+  background: $peach-puff;
+  position: relative;
+  overflow-x: clip;
+
+  @media (max-width: $min-tablet) {
+    padding: getSize(40);
+  }
+
+  .rsvp-flower-1 {
+    position: absolute;
+    z-index: 1;
+    width: getSize(350);
+    bottom: getSize(-60);
+    left: getSize(-50);
+
+    @media (max-width: $min-large-desktop) {
+      width: getSize(300);
+      bottom: getSize(-60);
+    }
+
+    @media (max-width: $max-tablet) {
+      width: getSize(250);
+    }
+
+    @media (max-width: $min-tablet) {
+      width: getSize(230);
+      bottom: getSize(-40);
+    }
+
+    @media (max-width: $max-mobile) {
+      width: getSize(180);
+      bottom: getSize(-35);
+      left: getSize(-35);
+    }
+  }
+
+  .rsvp-flower-2 {
+    position: absolute;
+    z-index: 1;
+    width: getSize(350);
+    bottom: getSize(-100);
+    right: getSize(-120);
+
+    @media (max-width: $min-large-desktop) {
+      width: getSize(300);
+      bottom: getSize(-90);
+      right: getSize(-110);
+    }
+
+    @media (max-width: $max-tablet) {
+      width: getSize(250);
+      bottom: getSize(-70);
+      right: getSize(-80);
+    }
+
+    @media (max-width: $min-tablet) {
+      width: getSize(230);
+      bottom: getSize(-50);
+    }
+
+    @media (max-width: $max-mobile) {
+      width: getSize(200);
+      bottom: getSize(-50);
+      right: getSize(-70);
+    }
+  }
+
+  .rsvp {
+    border: getSize(4) solid $papaya-whip;
+    background: $peach-puff;
+    padding: getSize(70) getSize(100);
+
+    @include screen-is(large-desktop) {
+      margin: 0 15%;
+    }
+
+    @media (max-width: $max-tablet) {
+      padding: getSize(70) getSize(30);
+    }
+
+    &-heading {
+      margin-bottom: getSize(30);
+      text-align: center;
+
+      & h2 {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: getSize(25);
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      & p {
+        color: $steel-blue;
+      }
+
+      &-date,
+      &-gifts {
+        font-style: italic;
+      }
+
+      &-date {
+        padding-top: getSize(10);
+        margin-bottom: 0;
+      }
+    }
+
+    &-form {
+      &-error {
+        position: relative;
+
+        &-msg {
+          position: absolute;
+          top: 0;
+          left: getSize(6);
+          z-index: 1;
+          color: $red;
+          font-size: getSize(14);
+        }
+      }
+
+      &-select,
+      &-input {
+        margin-top: getSize(20);
+        font-size: getSize(16);
+        background: $white;
+
+        &:focus-visible {
+          outline: 0;
+          box-shadow: 0 0 0 getSize(2) $baby-blue;
+        }
+
+        &:not([size]):not([multiple]) {
+          height: getSize(50);
+          border-radius: getSize(5);
+          color: $dark-gray-3;
+          font-size: getSize(14);
+          -webkit-appearance: none;
+          -ms-appearance: none;
+          -o-appearance: none;
+          appearance: none;
+          -moz-appearance: none;
+          position: relative;
+          border: none;
+          width: 100%;
+          padding-left: getSize(10);
+        }
+      }
+
+      &-select {
+        &:not([size]):not([multiple]) {
+          background: $white url('@images/select-icon.png') no-repeat calc(100% - getSize(15)) center;
+        }
+      }
+
+      &-textarea {
+        width: 100%;
+        height: getSize(170);
+        margin-top: getSize(25);
+        padding-left: getSize(10);
+        padding-top: getSize(10);
+        border: none;
+        border-radius: getSize(5);
+
+        &:focus-visible {
+          outline: 0;
+          box-shadow: 0 0 0 getSize(2) $baby-blue;
+        }
+      }
+
+      &-btn {
+        border: none;
+        padding: getSize(5) getSize(15) getSize(8);
+        background: $steel-blue;
+        color: $white;
+        border-radius: getSize(5);
+        margin-top: getSize(20);
+        cursor: pointer;
+
+        &:focus,
+        &:focus-visible {
+          outline: 1px solid $white;
+        }
+      }
+    }
+  }
+}

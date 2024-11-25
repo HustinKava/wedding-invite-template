@@ -1,0 +1,107 @@
+@use 'colors' as *;
+@use 'break-points' as *;
+@use 'font-weights' as *;
+@use 'fonts' as *;
+@use 'mixins' as *;
+
+.nav-mobile-wrapper {
+  .nav-mobile-hamburger {
+    z-index: 1;
+    cursor: pointer;
+    display: none;
+
+    @include screen-is-not(desktop) {
+      display: flex;
+      justify-content: center;
+    }
+
+    & i {
+      font-size: getSize(30);
+      color: $steel-blue;
+      align-self: center;
+    }
+  }
+
+  .nav-mobile {
+    position: fixed;
+    left: getSize(-280);
+    top: 0;
+    z-index: 1;
+    height: 100vh;
+    width: getSize(280);
+    transition: all 0.3s ease 0s;
+    box-shadow: 0 getSize(10) getSize(40) 0 $dark-charcoal;
+    overflow-x: auto;
+    overflow-y: scroll;
+    background: $pale-cyan;
+
+    @media (min-width: $min-desktop) {
+      display: none;
+    }
+
+    &-logo {
+      display: grid;
+      padding: getSize(20) getSize(20) 0 getSize(20);
+
+      & i {
+        font-size: getSize(30);
+        text-align: end;
+        padding-bottom: getSize(15);
+        color: $steel-blue;
+      }
+
+      & h2 {
+        text-align: center;
+        padding: getSize(20) 0;
+        font-weight: $semi-bold;
+
+        & a {
+          color: $steel-blue;
+        }
+      }
+    }
+
+    &-links {
+      list-style: none;
+      padding-left: 0;
+      display: unset;
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+
+      & li a,
+      li p {
+        display: block;
+        padding: getSize(13) getSize(30);
+        font-size: getSize(22);
+        letter-spacing: 0;
+        font-weight: $medium;
+        color: $steel-blue;
+        text-transform: uppercase;
+        font-weight: $semi-bold;
+      }
+
+      & li {
+        padding: getSize(20) 0;
+
+        & a {
+          position: relative;
+        }
+
+        & i {
+          position: absolute;
+          right: getSize(20);
+          top: getSize(17);
+        }
+
+        & p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .nav-mobile-show {
+    left: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,22 @@
+@use 'fonts' as *;
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 $fontawesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-bars:before {
+  content: '\f0c9';
+}
+
+.fa-times:before {
+  content: '\f00d';
+}
+
+.fa-arrow-up:before {
+  content: '\f062';
+}

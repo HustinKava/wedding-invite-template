@@ -1,0 +1,8 @@
+/* * Define font weights that are re-used across the application. Follow the guidelines for * naming them below. * * - Use the default 4 values wherever possible * * - Where a custom vallue needs to be set, ensure the name is short and generic * * - Ensure all the values are aligned by using tabs between the variable and the value */
+// Default font weights
+$light: 300;
+$normal: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+// Define any custom font-weights below

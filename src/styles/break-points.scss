@@ -1,0 +1,64 @@
+@use 'mixins' as *;
+/* * Define viewport break points that are re-used across the application. Follow the guidelines for * naming them below. * * - Use the default values wherever possible * * - Where a custom value needs to be set, ensure the name is short and generic * * - Ensure all the values are aligned by using tabs between the variable and the value */
+
+// Default breakpoints
+$min-mobile: 480px;
+$max-mobile: 576px;
+$min-tablet: 768px;
+$max-tablet: 991.98px;
+$min-desktop: 992px;
+$max-small-desktop: 1199px;
+$min-large-desktop: 1200px;
+
+// Breakpoint mixins to control view-port specific styles
+@mixin screen-is($size) {
+  @if $size == mobile {
+    @media (max-width: $max-mobile) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (min-width: $min-tablet) and (max-width: $max-tablet) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: $min-desktop) {
+      @content;
+    }
+  } @else if $size == small-desktop {
+    @media (min-width: $min-desktop) and (max-width: $max-small-desktop) {
+      @content;
+    }
+  } @else if $size == large-desktop {
+    @media (min-width: $min-large-desktop) {
+      @content;
+    }
+  } @else {
+    @error 'Unknown size #{$size}';
+  }
+}
+
+@mixin screen-is-not($size) {
+  @if $size == mobile {
+    @media (min-width: $min-tablet) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (min-width: $min-desktop) and (max-width: $max-mobile) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (max-width: $max-tablet) {
+      @content;
+    }
+  } @else if $size == small-desktop {
+    @media (min-width: $min-large-desktop) and (max-width: $max-tablet) {
+      @content;
+    }
+  } @else if $size == large-desktop {
+    @media (max-width: $max-small-desktop) {
+      @content;
+    }
+  } @else {
+    @error 'Unknown size #{$size}';
+  }
+}

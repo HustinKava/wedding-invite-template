@@ -1,0 +1,29 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+
+.scroll-wrapper {
+  .smoothscroll {
+    position: fixed;
+    bottom: getSize(15);
+    right: getSize(30);
+    list-style: none;
+    z-index: 999;
+
+    & a {
+      width: getSize(50);
+      height: getSize(50);
+      background: $steel-blue;
+      color: $white;
+      display: block;
+      border-radius: 50%;
+      text-align: center;
+      line-height: getSize(47);
+      transition: all 0.3s;
+      border: 1px solid $white;
+    }
+  }
+
+  .invisible {
+    display: none;
+  }
+}

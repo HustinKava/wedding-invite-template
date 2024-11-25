@@ -1,0 +1,18 @@
+@use 'fonts' as *;
+@use 'colors' as *;
+@use 'break-points' as *;
+@use 'mixins' as *;
+
+.gallery-wrapper {
+  background: $pale-cyan;
+  position: relative;
+  padding: getSize(50);
+
+  .swiper-slide img {
+    border: getSize(4) solid $baby-blue;
+  }
+
+  .swiper-pagination-bullets {
+    display: none;
+  }
+}

@@ -1,0 +1,101 @@
+@use 'fonts' as *;
+@use 'colors' as *;
+@use 'font-weights' as *;
+@use 'break-points' as *;
+@use 'mixins' as *;
+
+.location-wrapper {
+  padding: getSize(50);
+  background: $papaya-whip;
+  position: relative;
+  overflow-x: clip;
+
+  @media (max-width: $min-tablet) {
+    padding: getSize(40);
+  }
+
+  .location {
+    display: flex;
+    justify-content: space-evenly;
+
+    @include screen-is(mobile) {
+      flex-direction: column;
+    }
+
+    &-content {
+      text-align: center;
+
+      @media (max-width: $min-tablet) {
+        margin-bottom: getSize(20);
+      }
+
+      &-header {
+        border: getSize(2) solid $baby-blue;
+        padding: getSize(2) getSize(40);
+        margin: 0 getSize(30);
+        position: relative;
+
+        &-flower-1 {
+          position: absolute;
+          width: getSize(140);
+          bottom: getSize(20);
+          right: getSize(125);
+          transform: rotate(-15deg);
+
+          @media (max-width: $min-tablet) {
+            width: getSize(120);
+            bottom: getSize(30);
+            right: getSize(140);
+          }
+
+          @media (max-width: $max-mobile) {
+            width: getSize(120);
+            bottom: getSize(25);
+            left: getSize(-40);
+          }
+        }
+
+        &-flower-2 {
+          position: absolute;
+          transform: rotate(240deg);
+          width: getSize(70);
+          top: getSize(-45);
+          left: getSize(-25);
+
+          @media (max-width: $min-tablet) {
+          }
+
+          @media (max-width: $max-mobile) {
+            width: getSize(60);
+            top: getSize(-30);
+            left: getSize(-20);
+          }
+        }
+
+        &-title {
+          font-size: getSize(16);
+          margin: 0;
+          font-weight: $semi-bold;
+        }
+
+        &-date {
+          font-size: getSize(30);
+          margin: 0;
+        }
+      }
+
+      &-address {
+        padding-top: getSize(20);
+
+        &-venue,
+        &-value {
+          margin: 0;
+        }
+
+        &-venue {
+          font-weight: $semi-bold;
+        }
+      }
+    }
+  }
+}
