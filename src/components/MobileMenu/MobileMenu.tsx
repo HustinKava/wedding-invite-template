@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import './MobileMenu.scss';
-import { TITLE, COUPLE, STORY, LOCATION, RSVP, GALLERY } from './Constants';
+import { TITLE, COUPLE, STORY, LOCATION, RSVP, GALLERY, MENU } from './Constants';
 
 const MobileMenu: React.FC = () => {
   const [menuShowing, setMenuShowing] = useState<boolean>(false);
@@ -33,6 +33,7 @@ const MobileMenu: React.FC = () => {
         tabIndex={0}
         onClick={(e) => openNavClick(e)}
         onKeyDown={(e) => openNavKey(e)}
+        aria-label={MENU}
       >
         <i className="fa fa-bars" aria-hidden="true" />
       </div>

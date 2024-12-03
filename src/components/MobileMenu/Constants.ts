@@ -4,6 +4,7 @@ export const STORY = 'Story';
 export const LOCATION = 'Location';
 export const RSVP = 'Rsvp';
 export const GALLERY = 'Gallery';
+export const MENU = 'hamburger menu';
 
 export default {
   TITLE,
@@ -11,5 +12,6 @@ export default {
   STORY,
   LOCATION,
   RSVP,
-  GALLERY
+  GALLERY,
+  MENU
 };
